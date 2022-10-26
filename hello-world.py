@@ -7,10 +7,11 @@ sampler = DWaveSampler(
 
 # Setzen der Koppler h_ij
 h = {
-    (0,0): -1,  # Qubit 0 soll 1 werden
-    (1,1):  1,  # Qubit 1 soll 0 werden
-    (1,2):  1,  # Qubit 1 und 2 sollen nicht gleichzeitig 1 werden
-    (1,3): -1,  # Qubit 1 und 3 sollen beide 1 werden
+    (0,0): -1,  # Koppler auf Qubit 0
+    (1,1):  1,  # Koppler auf Qubit 1
+    (2,2):  1,  # Koppler auf Qubit 2
+    (1,5):  1,  # Koppler zwischen Qubits 1 und 5
+    (1,6): -1,  # Koppler zwischen Qubits 1 und 6
 }
 
 response = sampler.sample_qubo(
