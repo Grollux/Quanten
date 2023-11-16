@@ -5,6 +5,10 @@ from __future__ import print_function  # allow it to run on python2 and python3
 import numpy as np
 from dwave.system.samplers import DWaveSampler
 from dwave.system import EmbeddingComposite, LazyFixedEmbeddingComposite
+import dwave.inspector
+
+# Replace 'YOUR_API_TOKEN' with your actual API token
+
 
 # load matrix
 qubomatrix = np.loadtxt('qubomatrix.txt')
@@ -40,3 +44,6 @@ with open('embedding.txt','w') as file:
     for logicalqubit, physicalqubits in sampler.embedding.items():
         file.write('%d\t%s\n' % (logicalqubit, physicalqubits))
     print('Saved embedding in embedding.txt')
+
+# Loesungen ansehen
+dwave.inspector.show(response)
