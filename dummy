@@ -1,0 +1,12 @@
+pip install dwave-ocean-sdk
+
+pip install dwave-inspector
+
+dwave config create
+
+dwave install inspector
+
+dwave auth login --oob
+
+
+API-token eingeben
