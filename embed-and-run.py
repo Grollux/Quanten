@@ -8,7 +8,7 @@ from dwave.system import EmbeddingComposite, LazyFixedEmbeddingComposite
 import dwave.inspector
 
 # Replace 'YOUR_API_TOKEN' with your actual API token
-
+YOUR_API_TOKEN = "XXXXXXXXXXXXXXXXXXXX"
 
 # load matrix
 qubomatrix = np.loadtxt('qubomatrix.txt')
@@ -22,7 +22,7 @@ for index,value in np.ndenumerate(qubomatrix):
 print('Converted matrix into QUBO for D-Wave:\n', qubo, '\n')
 
 # embed and run on the D-Wave with 1000 reads
-sampler = LazyFixedEmbeddingComposite(DWaveSampler())
+sampler = LazyFixedEmbeddingComposite(DWaveSampler(token = YOUR_API_TOKEN))
 
 response = sampler.sample_qubo(qubo, num_reads=1000, chain_strength=2.0, annealing_time=1)  # NOTE: setting chain_strength and annealing_time explicitly
 print('Response from the D-Wave:\n', response, '\n')
@@ -45,5 +45,5 @@ with open('embedding.txt','w') as file:
         file.write('%d\t%s\n' % (logicalqubit, physicalqubits))
     print('Saved embedding in embedding.txt')
 
-# Loesungen ansehen
+# show solutions
 dwave.inspector.show(response)
