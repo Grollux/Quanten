@@ -8,7 +8,7 @@ from dwave.system import EmbeddingComposite, LazyFixedEmbeddingComposite
 import dwave.inspector
 
 # Replace 'YOUR_API_TOKEN' with your actual API token
-YOUR_API_TOKEN = "XXXXXXXXXXXXXXXXXXXX"
+YOUR_API_TOKEN = "DEV-bc072167070a3e1dfb5ecb614b1f77d75fc23e3d"
 
 # load matrix
 qubomatrix = np.loadtxt('qubomatrix.txt')
